@@ -13,9 +13,11 @@ async function refreshIt()
     initRefreshTimer()
 }
 
-initRefreshTimer()
-
-window.onload = function() {
-    var gl = Object.create(glitch_exec);
-    gl.start(document.body);
+if (window.DEV === 'dev') {
+    initRefreshTimer()
+    
+    window.onload = function() {
+        var gl = Object.create(glitch_exec);
+        gl.start(document.body);
+    }
 }
