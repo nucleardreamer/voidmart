@@ -5,17 +5,21 @@ services:
   voidmart:
     build: .
     privileged: true
+    restart: always
     network_mode: host
     ports:
       - '8080'
     volumes:
       - 'cache:/cache'
     labels:
-      io.balena.features.supervisor-api: '1'
+      io.balena.features.dbus: "1"
+    environment:
+      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
 
   browser:
     image: bh.cr/balenalabs/browser-amd64
     privileged: true
+    restart: always
     network_mode: host
     ports:
       - '5011'

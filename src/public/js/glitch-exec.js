@@ -50,7 +50,6 @@ glitch_exec = {
             else if (gl.GLITCH_INTERVAL_PROGRESSIVE && gl.GLITCH_RENDER_COUNT > 0)
                 setTimeout(function () { gl.__state_machine(gl) }, gl.times_rendered * getRandomInt(500, 1500));
             else
-                console.log('delaying')
             setTimeout(function () { gl.__state_machine(gl) }, getRandomInt(gl.GLITCH_INTERVAL_MIN, gl.GLITCH_INTERVAL_MAX));
             gl.curr_canvas = null;
 

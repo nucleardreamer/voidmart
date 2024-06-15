@@ -8,6 +8,7 @@ html
         window.GLITCH_MAX=#{GLITCH_MAX};
         window.GLITCH_COUNT=#{GLITCH_COUNT};
         window.GLITCH_DELAY=#{GLITCH_DELAY};
+        window.DEV="#{DEV}";
     style.
       body.dev {
         overflow: scroll !important;
@@ -21,23 +22,9 @@ html
   body(class=DEV)
     .content
         .page.landing
-            .logo
-                img(src='images/logo.png')
-            .title Tap to start shopping!
-            .footer
-                span &copy; 1983 Void Distribution Solutions, Inc.
-                span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                span &copy; 2024 Void Mart Holdings, Ltd.
-        //- .page.browse 
-        //-     .header 
-        //-         .logo 
-        //-     .hero 
-        //-         .text Limit one item per customer. 
-        //-     .scroller 
-        //-         .item 
-        //-         .item 
-        //-         .item
-        //-     .footer
+            include landing.pug
+        .page.browse 
+            include browse.pug
         //- .page.detail 
         //-     .title 
         //-     .reviews 
