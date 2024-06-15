@@ -1,0 +1,47 @@
+body {
+    overflow: hidden;
+}
+
+body,html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #222;
+    width: 1080px;
+    height: 1920px;
+}
+
+.content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+.bg {
+    position: absolute;
+    background-color: #86242a;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url('bg.svg');
+        background-repeat: repeat;
+        background-size: 300px;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        opacity: .2;
+    }
+}

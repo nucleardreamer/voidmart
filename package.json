@@ -1,0 +1,32 @@
+{
+  "name": "voidmart",
+  "version": "1.0.0",
+  "description": "An ominous self-serve kiosk that trades trivial boons for a small piece of your soul",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run scss-build && node src/index.js",
+    "dev": "nodemon src/index.js & npm run scss",
+    "scss": "sass --watch src/public/main.scss src/public/main.css",
+    "scss-build": "sass src/public/main.scss src/public/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nucleardreamer/voidmart.git"
+  },
+  "author": "Flynn Joffray <nucleardreamer@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nucleardreamer/voidmart/issues"
+  },
+  "homepage": "https://github.com/nucleardreamer/voidmart#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "pug": "^3.0.3",
+    "sass": "^1.77.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
