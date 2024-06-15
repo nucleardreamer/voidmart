@@ -2,6 +2,17 @@ version: "2.1"
 
 services:
 
+  voidmart:
+    build: .
+    privileged: true
+    network_mode: host
+    ports:
+      - '8080'
+    volumes:
+      - 'cache:/cache'
+    labels:
+      io.balena.features.supervisor-api: '1'
+
   browser:
     image: bh.cr/balenalabs/browser-amd64
     privileged: true
@@ -11,6 +22,7 @@ services:
       - '35173'
     volumes:
       - 'browser:/data'
+
   wifi-connect:
     build: ./wifi-connect
     restart: always
@@ -20,60 +32,7 @@ services:
       io.balena.features.dbus: "1"
       io.balena.features.firmware: "1"
 
-  # python-wifi-connect:
-  #   image: ghcr.io/balena-labs-research/python-wifi-connect:latest
-  #   environment:
-  #     PWC_HOST: bridge
-  #     PWC_PORT: 9090
-  #     PWC_HOTSPOT_SSID: 'VOIDMART'
-  #     PWC_HOTSPOT_PASSWORD: 'voidmart'
-  #     DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
-  #   network_mode: host
-  #   restart: on-failure
-  #   volumes:
-  #     - 'pwc:/app/db'
-  #   labels:
-  #     io.balena.features.dbus: '1'
-  #   cap_add:
-  #     - NET_ADMIN
-  #   privileged: true
-
-
-  # python-wifi-connect:
-  #   image: ghcr.io/balena-labs-research/python-wifi-connect:latest
-  #   environment:
-  #     ## Listening IP and port ##
-  #     PWC_HOST: "0.0.0.0"
-  #     PWC_PORT: 9090
-
-  #     ## Hotspot details ##
-  #     PWC_HOTSPOT_SSID: "Python Wi-Fi Connect"
-  #     #PWC_HOTSPOT_PASSWORD: "my-hotspot-password" # Optional. Must be 8 characters or more.
-
-  #     ## Try to automatically connect to a Wi-Fi network on first boot ##
-  #     #PWC_AC_SSID: "network-name" # Compulsory for this feature
-  #     #PWC_AC_USERNAME: "username" # Optional
-  #     #PWC_AC_PASSWORD: "your-password" # Optional. Must be 8 characters or more.
-
-  #     ## Wi-Fi Interface ##
-  #     #PWC_INTERFACE: "wlan0" # By default it automatically detects the interface.
-
-  #     ## Enable/Disable LED interaction ##
-  #     #PWC_LED: "on"
-
-  #     ## Required system variables ##
-  #     DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
-
-  #   network_mode: "host"
-  #   restart: on-failure
-  #   volumes:
-  #     - "pwc:/app/db" # Optional if not setting the hotspot ssid and password via the API
-  #   labels:
-  #     io.balena.features.dbus: "1"
-  #   cap_add:
-  #     - NET_ADMIN
-  #   privileged: true # This can be removed if you do not need the LED indicator.
-
 volumes:
   pwc:
   browser:
+  cache:
