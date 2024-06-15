@@ -1,20 +1,63 @@
 html
   head
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
     link(rel='stylesheet', href='main.css')
     script.
-      window.refreshTimer="#{refreshTimer}";
+        window.REFRESH_TIMER="#{REFRESH_TIMER}";
+        window.GLITCH_MIN=#{GLITCH_MIN};
+        window.GLITCH_MAX=#{GLITCH_MAX};
+        window.GLITCH_COUNT=#{GLITCH_COUNT};
+        window.GLITCH_DELAY=#{GLITCH_DELAY};
     style.
       body.dev {
         overflow: scroll !important;
       }
-    script(src='htmx.js')
-    script(src='main.js')
+    script(src='js/htmx.js')
+    script(src='js/html2canvas.js')
+    script(src='js/glitch-lib.js')
+    script(src='js/glitch-exec.js')
+    script(src='js/main.js')
 
-  body(class=dev)
+  body(class=DEV)
     .content
-        .landing
+        .page.landing
             .logo
-                img(src='logo.svg')
-            .title Tap to start shopping!
+                img(src='images/logo.png')
+            .title#glitch1 Tap to start shopping!
+        //- .page.browse 
+        //-     .header 
+        //-         .logo 
+        //-     .hero 
+        //-         .text Limit one item per customer. 
+        //-     .scroller 
+        //-         .item 
+        //-         .item 
+        //-         .item
+        //-     .footer
+        //- .page.detail 
+        //-     .title 
+        //-     .reviews 
+        //-     .description 
+        //-     .free-shipping 
+        //-     .continue-to-checkout
+        //- .page.checkout 
+        //-     .summary
+        //-     .delivery 
+        //-         .option Free Delivery 
+        //-         .option.disabled
+        //-     .tos-checkbox 
+        //-     .price
+        //- .page.confirmation 
+        //-     .disclaimer
+        //-     .signature
+        //-         .clear 
+        //-     .submit
+        //- .page.finished 
+        //-     .startover            
+
+        //- .overlay.tos 
+        //-     .text 
+        //-     .accept 
+
     .bg
+        .img

@@ -165,7 +165,7 @@ body, html {
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 3;
+  z-index: 2;
 }
 
 .bg {
@@ -177,17 +177,14 @@ body, html {
   left: 0;
   z-index: 1;
 }
-.bg::before {
-  content: "";
-  position: absolute;
-  background-image: url("bg.svg");
+.bg .img {
+  background-image: url("images/pixel_bg_repeat.png");
   background-repeat: repeat;
-  background-size: 300px;
+  position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
   opacity: 0.2;
 }
 
@@ -207,6 +204,9 @@ body, html {
   margin-top: 50%;
   width: 550px;
   animation: pulse 1.5s infinite;
+}
+.landing .logo img {
+  width: 100%;
 }
 .landing .title {
   font-size: 80px;

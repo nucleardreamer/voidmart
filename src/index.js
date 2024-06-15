@@ -17,8 +17,12 @@ app.set('view engine', 'pug')
 
 app.get('/', async (req, res) => {
     res.render('index', {
-        refreshTimer: process.env.REFRESH_TIMER || 30000,
-        dev: process.env.NODE_ENV === 'production' ? '' : 'dev'
+        GLITCH_MIN: process.env.GLITCH_MIN || 500,
+        GLITCH_MAX: process.env.GLITCH_MAX || 1500,
+        GLITCH_DELAY: process.env.GLITCH_DELAY || 60,
+        GLITCH_COUNT: process.env.GLITCH_COUNT || 7,
+        REFRESH_TIMER: process.env.REFRESH_TIMER || 120000,
+        DEV: process.env.NODE_ENV === 'production' ? '' : 'dev'
     })
 })
 
