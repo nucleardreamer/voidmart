@@ -1,5 +1,3 @@
-// refresh timer
-
 let details = {
     name: '',
     desc: ''
@@ -35,14 +33,14 @@ function fillDetails(name, desc) {
     $('.detail .desc').text(desc)
 }
 
-function something() {
-    console.log(arguments)
-}
-
 if (window.DEV !== "dev") {
-    // initRefreshTimer()
+
+    // kill right click
+    document.addEventListener('contextmenu', ev => ev.preventDefault())
+    
     window.onload = function() {
-        var gl = Object.create(glitch_exec);
-        gl.start(document.body);
+        var gl = Object.create(glitch_exec)
+        gl.start(document.body)
     }
+    // initRefreshTimer()
 }

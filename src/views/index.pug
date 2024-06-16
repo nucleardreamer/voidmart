@@ -33,27 +33,35 @@ html
 
       //- browse
       .page.browse
-        .header 
+        .header(onclick="goto('.landing')")
           img.logo(src='images/logo_small.png')
-        .hero 
-          .text Limit one item per customer. 
-        .cats
-          each cat in BOONS
-            .cat
-              .title= cat.title
-              each item in cat.items
-                .item
-                  .img 
-                  .name(
-                      onclick="fillDetails(\""+item.name+"\", \""+item.desc+"\");goto('.detail')"
-                  )= item.name
-        .testimonial
-          .item 
-            .title "4/5 stars!!! I found $46.74 cents on the ground! But I can no longer hear music..."
-            .sig - Max Hobbs
-          .item 
-            .title "5 stars. Hey Bing, why won't my son call me back?"
-            .sig - google.com
+        .scroller
+          .hero
+            .title Discover the deals that cost you less than money.
+            .desc Immerse yourself in a shopping experience that transcends the ordinary, where each transaction becomes an opportunity to unlock new dimensions of satisfaction
+            .small Limit one item per customer.
+          .cats
+            each cat in BOONS
+              .cat
+                .title= cat.title
+                .items
+                  each item in cat.items
+                    .item(
+                        onclick="fillDetails(\""+item.name+"\", \""+item.desc+"\");goto('.detail')"
+                    )
+                      .img
+                        img(src=item.url)
+                      .name= item.name
+          .testimonial
+            .item 
+              .title "4/5 stars!!! I found $46.74 cents on the ground! But I can no longer hear music..."
+              .sig - Max Hobbs
+            .item 
+              .title "5 stars. Hey Bing, why won't my son call me back?"
+              .sig - google.com
+            .item 
+              .title "I have fallen in love with this immersive experience."
+              .sig - Andrew Nhem
         .footer
           button(onclick="goto('.landing')") BACK TO LANDING
 

@@ -144,10 +144,16 @@
 }
 body {
   overflow: hidden;
+  user-select: none;
 }
 
 body.dev {
   overflow: scroll !important;
+  user-select: inherit;
+}
+
+canvas {
+  pointer-events: none !important;
 }
 
 body, html {
@@ -276,18 +282,92 @@ body, html {
   align-items: start;
   background-color: #fff;
 }
-
-.header {
+.browse .header {
   width: 100%;
-  background-color: #86242a;
+  background-color: rgb(250, 235, 222);
   color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  filter: drop-shadow(0px 0px 3px #000);
 }
-.header .logo {
+.browse .header .logo {
   width: 150px;
   margin: 20px;
+}
+.browse .scroller {
+  flex: 1;
+  width: 100%;
+  overflow-y: scroll;
+  flex-direction: column;
+  box-sizing: content-box;
+}
+.browse .scroller::-webkit-scrollbar {
+  display: none;
+}
+.browse .scroller .hero {
+  display: flex;
+  flex-direction: column;
+  background-image: url("images/hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -80px;
+  color: #fff;
+  height: 410px;
+  padding: 40px 440px 0px 40px;
+  background-color: rgba(0, 0, 0, 0.25);
+  background-blend-mode: darken;
+}
+.browse .scroller .hero .title {
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 65px 0px 0px 0px;
+  text-shadow: 1px 1px 5px #444;
+}
+.browse .scroller .hero .desc {
+  font-size: 25px;
+  margin: 5px 0px 0px 0px;
+  font-weight: 300;
+  text-shadow: 1px 1px 1px #000;
+}
+.browse .scroller .hero .small {
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 95px;
+}
+.browse .scroller .cats {
+  display: flex;
+  flex-direction: column;
+}
+.browse .scroller .cats .cat {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px;
+}
+.browse .scroller .cats .cat .title {
+  position: relative;
+  font-size: 48px;
+  text-align: center;
+  margin: 100px 0px 30px 0px;
+  font-weight: 200;
+}
+.browse .scroller .cats .cat .items {
+  display: flex;
+  flex-direction: row;
+}
+.browse .scroller .cats .cat .items .item {
+  margin: 2px;
+}
+.browse .scroller .cats .cat .items .item .img img {
+  width: 100%;
+}
+.browse .scroller .cats .cat .items .item .name {
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 20px;
+  font-weight: 500;
+  padding: 0px 40px;
 }
 
 .detail {
