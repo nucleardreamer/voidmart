@@ -1,7 +1,7 @@
 const { ThermalPrinter, PrinterTypes, CharacterSet, BreakLine } = require('node-thermal-printer')
 const path = require('path')
 
-async function printit() {
+async function printit(itemText, fortuneText) {
     const p = new ThermalPrinter({
         type: PrinterTypes.EPSON,
         interface: process.env.PRINTER_DEV_PATH || '/dev/usb/lp3',
@@ -39,14 +39,20 @@ async function printit() {
     p.alignLeft()
     p.println(' '); p.newLine();
     p.println('Order:')
+    p.drawLine()
     p.println(' '); p.newLine();
-    p.println('A 3% Increase in the Likelihood of Finding Money on the Street')
+    p.bold(true)
+
+    // item text
+    p.println(itemText)
+    p.bold(false)
     p.println(' '); p.newLine();
 
     p.drawLine()
     p.table(['Subtotal', '', '', '$0.00']);
     p.table(['Total Tax', '', '', '$0.00']);
     p.table(['Service Fee', '', '', '$0.00']);
+    p.table(['Intangible Essence', '', '1 Fraction']);
     p.drawLine()
 
     p.bold(true)
@@ -60,12 +66,15 @@ async function printit() {
     p.println(' '); p.newLine();
     p.newLine()
     p.alignCenter()
+
+    // fortune
     await p.printImage('./public/images/separator1.png')
     p.println('** You FREE fortune **')
     p.println(' '); p.newLine();
 
+    // fortune text
     p.bold(true)
-    p.println('"The shadows of your digital footprint will echo in the halls of eternity."')
+    p.println(`"${fortuneText}"`)
     p.bold(false)
     p.setTextSize(0,0)
     await p.printImage('./public/images/separator1.png')
@@ -129,4 +138,4 @@ function formatDate() {
     return formattedDate;
 }
 
-printit()
+module.exports = printit

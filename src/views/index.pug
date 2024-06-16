@@ -9,11 +9,7 @@ html
         window.GLITCH_COUNT=#{GLITCH_COUNT};
         window.GLITCH_DELAY=#{GLITCH_DELAY};
         window.DEV="#{DEV}";
-    style.
-      body.dev {
-        overflow: scroll !important;
-      }
-    script(src='js/htmx.js')
+    script(src='js/jquery.js')
     script(src='js/html2canvas.js')
     script(src='js/glitch-lib.js')
     script(src='js/glitch-exec.js')
@@ -21,34 +17,76 @@ html
 
   body(class=DEV)
     .content
-        .page.landing
-            include landing.pug
-        .page.browse 
-            include browse.pug
-        //- .page.detail 
-        //-     .title 
-        //-     .reviews 
-        //-     .description 
-        //-     .free-shipping 
-        //-     .continue-to-checkout
-        //- .page.checkout 
-        //-     .summary
-        //-     .delivery 
-        //-         .option Free Delivery 
-        //-         .option.disabled
-        //-     .tos-checkbox 
-        //-     .price
-        //- .page.confirmation 
-        //-     .disclaimer
-        //-     .signature
-        //-         .clear 
-        //-     .submit
-        //- .page.finished 
-        //-     .startover            
 
-        //- .overlay.tos 
-        //-     .text 
-        //-     .accept 
+      //- landing
+      .page.landing.show(onclick="goto('.browse')")
+        .wrapper
+          .logo
+            img(src='images/logo.png')
+          .title Tap to start shopping!
+          .footer
+            span &copy; 1983 Void Distribution Solutions, Inc.
+            span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            span &copy; 2024 Void Mart Holdings, Ltd.
+        .bg
+          .img
 
-    .bg
+      //- browse
+      .page.browse
+        .header 
+          img.logo(src='images/logo_small.png')
+        .hero 
+          .text Limit one item per customer. 
+        .cats
+          each cat in BOONS
+            .cat
+              .title= cat.title
+              each item in cat.items
+                .item
+                  .img 
+                  .name(
+                      onclick="fillDetails(\""+item.name+"\", \""+item.desc+"\");goto('.detail')"
+                  )= item.name
+        .testimonial
+          .item 
+            .title "4/5 stars!!! I found $46.74 cents on the ground! But I can no longer hear music..."
+            .sig - Max Hobbs
+          .item 
+            .title "5 stars. Hey Bing, why won't my son call me back?"
+            .sig - google.com
+        .footer
+          button(onclick="goto('.landing')") BACK TO LANDING
+
+      //- detail
+      .page.detail 
+        .back 
+          button(onclick="goto('.browse')") Back
         .img
+        .title
+        .desc 
+        .reviewCount
+        .free-shipping 
+        .continue-to-checkout
+
+
+
+
+
+      //- .page.checkout 
+      //-     .summary
+      //-     .delivery 
+      //-         .option Free Delivery 
+      //-         .option.disabled
+      //-     .tos-checkbox 
+      //-     .price
+      //- .page.confirmation 
+      //-     .disclaimer
+      //-     .signature
+      //-         .clear 
+      //-     .submit
+      //- .page.finished 
+      //-     .startover            
+
+      //- .overlay.tos 
+      //-     .text 
+      //-     .accept 

@@ -146,6 +146,10 @@ body {
   overflow: hidden;
 }
 
+body.dev {
+  overflow: scroll !important;
+}
+
 body, html {
   width: 100%;
   height: 100%;
@@ -165,29 +169,39 @@ body, html {
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 2;
 }
 
-.bg {
-  position: absolute;
-  background-color: #86242a;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.bg .img {
-  background-image: url("images/pixel_bg_repeat.png");
-  background-repeat: repeat;
+.page {
   position: absolute;
   height: 100%;
   width: 100%;
+  width: 1080px;
+  height: 1920px;
+  top: -1920px;
+  left: 0px;
+  animation: transitionOut 1s ease;
+}
+.page.show {
   top: 0;
-  left: 0;
-  opacity: 0.2;
+  animation: transitionIn 1s ease;
 }
 
+@keyframes transitionOut {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -1920px;
+  }
+}
+@keyframes transitionIn {
+  0% {
+    top: 1920px;
+  }
+  100% {
+    top: 0px;
+  }
+}
 @keyframes pulse {
   10% {
     transform: scale(1.15);
@@ -201,7 +215,6 @@ body, html {
   color: #fff;
 }
 .landing .logo {
-  margin-top: 50%;
   width: 550px;
   animation: pulse 1.5s infinite;
 }
@@ -227,6 +240,58 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
+}
+.landing .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.bg {
+  position: absolute;
+  background-color: #86242a;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.bg .img {
+  background-image: url("images/pixel_bg_repeat.png");
+  background-repeat: repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+.browse {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #fff;
+}
+
+.header {
+  width: 100%;
+  background-color: #86242a;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header .logo {
+  width: 150px;
+  margin: 20px;
+}
+
+.detail {
+  background-color: blue;
 }
 
 /*# sourceMappingURL=main.css.map */

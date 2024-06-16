@@ -1,0 +1,19 @@
+.browse {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fff;
+}
+
+.header {
+    width: 100%;
+    background-color: #86242a;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .logo {
+        width: 150px;
+        margin: 20px;
+    }
+}
