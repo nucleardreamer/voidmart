@@ -152,7 +152,7 @@ body.dev {
   user-select: inherit;
 }
 
-canvas {
+body > canvas {
   pointer-events: none !important;
 }
 
@@ -177,6 +177,20 @@ body, html {
   width: 100%;
 }
 
+.header {
+  width: 100%;
+  background-color: rgb(250, 235, 222);
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  filter: drop-shadow(0px 0px 3px #000);
+}
+.header .logo {
+  width: 150px;
+  margin: 30px;
+}
+
 .page {
   position: absolute;
   height: 100%;
@@ -190,6 +204,36 @@ body, html {
 .page.show {
   top: 0;
   animation: transitionIn 1s ease;
+}
+
+.footer {
+  color: #fff;
+  background-color: #444;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.button {
+  display: inline-block;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  line-height: 1;
+  background-color: #815eff;
+  letter-spacing: 4px;
+  color: #fff;
+  border: 3px solid #592bff;
+  transition: background-color 0.5s ease;
+}
+.button:active {
+  background-color: #d1c4ff;
 }
 
 @keyframes transitionOut {
@@ -234,20 +278,6 @@ body, html {
   margin-top: 220px;
   font-style: italic;
 }
-.landing .footer {
-  position: absolute;
-  bottom: 0;
-  color: #000;
-  background-color: #fff;
-  font-weight: 500;
-  text-align: center;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: none;
-}
 .landing .wrapper {
   display: flex;
   flex-direction: column;
@@ -283,17 +313,8 @@ body, html {
   background-color: #fff;
 }
 .browse .header {
-  width: 100%;
   background-color: rgb(250, 235, 222);
   color: #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  filter: drop-shadow(0px 0px 3px #000);
-}
-.browse .header .logo {
-  width: 150px;
-  margin: 20px;
 }
 .browse .scroller {
   flex: 1;
@@ -346,7 +367,6 @@ body, html {
   padding: 0px 30px;
 }
 .browse .scroller .cats .cat .title {
-  position: relative;
   font-size: 48px;
   text-align: center;
   margin: 100px 0px 30px 0px;
@@ -369,9 +389,193 @@ body, html {
   font-weight: 500;
   padding: 0px 40px;
 }
+.browse .scroller .testimonial {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.browse .scroller .testimonial .head {
+  font-size: 48px;
+  text-align: center;
+  margin: 50px 0px 0px 0px;
+  font-weight: 200;
+}
+.browse .scroller .testimonial .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 70px;
+  text-align: center;
+}
+.browse .scroller .testimonial .item .title {
+  font-size: 30px;
+  font-style: italic;
+}
+.browse .scroller .testimonial .sig {
+  font-size: 24px;
+  margin-top: 15px;
+  font-weight: 300;
+}
 
 .detail {
-  background-color: blue;
+  background-color: #fff;
+}
+.detail .footer {
+  position: absolute;
+  bottom: 0;
+}
+.detail .header {
+  color: #000;
+  background-color: #C7C;
+}
+.detail .header .logo {
+  filter: invert(1);
+}
+.detail .header .back {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-left: 60px;
+}
+.detail .header .back i {
+  font-size: 40px;
+  color: #000;
+}
+.detail .body {
+  display: flex;
+  flex-direction: row;
+  margin-top: 180px;
+}
+.detail .body .left, .detail .body .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.detail .body .left .img {
+  margin: 0px 60px 0px 20px;
+}
+.detail .body .left .img img {
+  width: 100%;
+}
+.detail .body .right {
+  margin-right: 50px;
+  gap: 30px;
+}
+.detail .body .title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15em;
+}
+.detail .body .desc {
+  font-size: 22px;
+  line-height: 1.25em;
+}
+.detail .body .button {
+  width: 320px;
+  margin-top: 30px;
+}
+.detail .advantage {
+  background-color: rgb(250, 238, 221);
+  color: rgb(0, 18, 51);
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  margin-top: 120px;
+}
+.detail .advantage .headline {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 8px;
+}
+.detail .advantage .points {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 100px;
+  margin-top: 40px;
+  text-align: center;
+  gap: 10px;
+}
+.detail .advantage .points .point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.detail .advantage .points .point .title {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+.detail .advantage .points .point i {
+  font-size: 100px;
+}
+.detail .disclaimer {
+  margin: 50px 80px;
+  font-size: 12px;
+  text-align: center;
+  font-style: italic;
+}
+
+.checkout {
+  background-color: #63f8f0;
+}
+.checkout .header {
+  background-color: #63f8f0;
+  filter: none;
+}
+.checkout .body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 100px 160px 0px 160px;
+}
+.checkout .tos {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 775px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+}
+.checkout .tos::-webkit-scrollbar {
+  display: none;
+}
+.checkout .tos .title {
+  font-size: 30px;
+}
+.checkout .tos ol li {
+  margin-top: 15px;
+  text-wrap: wrap;
+}
+.checkout .sig {
+  margin: 50px;
+}
+.checkout .sig .title {
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.checkout .sig .pad {
+  background-color: #fff;
+  filter: drop-shadow(0px 0px 4px rgba(85, 102, 102, 0.4));
+}
+.checkout .sig .clear {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.checkout .confirm {
+  text-align: center;
+}
+.checkout .confirm .button {
+  width: 80%;
 }
 
 /*# sourceMappingURL=main.css.map */

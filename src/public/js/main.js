@@ -1,6 +1,7 @@
 let details = {
     name: '',
-    desc: ''
+    desc: '',
+    url: ''
 }
 
 async function initRefreshTimer()
@@ -9,6 +10,7 @@ async function initRefreshTimer()
         refreshIt()
     }, window.REFRESH_TIMER)
 }
+
 async function refreshIt()
 {
     location.reload()
@@ -25,13 +27,25 @@ function goto(pageToShow) {
     $(pageToShow).addClass('show')
 }
 
-function fillDetails(name, desc) {
+function fillDetails(name, desc, url) {
     console.log(name, desc)
     details.name = name
     details.desc = desc
-    $('.detail .title').text(name)
-    $('.detail .desc').text(desc)
+    details.url = url
+    $('.detail .body .title').text(name)
+    $('.detail .body .desc').text(desc)
+    $('.detail .img img').attr('src', url)
 }
+
+let padCanvas, signaturePad;
+
+$(document).ready(() => {
+    padCanvas = document.querySelector(".pad")
+    signaturePad = new SignaturePad(padCanvas, {
+        minWidth: 1,
+        maxWidth: 6,
+    })
+})
 
 if (window.DEV !== "dev") {
 

@@ -8,7 +8,7 @@ body.dev {
     user-select: inherit;
 }
 
-canvas {
+body > canvas {
     pointer-events: none !important;
 }
 
@@ -33,6 +33,20 @@ body,html {
     width: 100%;
 }
 
+.header {
+    width: 100%;
+    background-color: rgb(250, 235, 222);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 3px #000);
+    .logo {
+        width: 150px;
+        margin: 30px;
+    }
+}
+
 .page {
     position: absolute;
     height: 100%;
@@ -45,6 +59,36 @@ body,html {
     &.show {
         top: 0;
         animation: transitionIn 1s ease;
+    }
+}
+
+.footer {
+    color: #fff;
+    background-color: #444;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.button {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 1;
+    background-color: #815eff;
+    letter-spacing: 4px;
+    color: #fff;
+    border: 3px solid darken(#815eff, 10%);
+    transition: background-color .5s ease;
+    &:active {
+        background-color: lighten(#815eff, 20%);
     }
 }
 

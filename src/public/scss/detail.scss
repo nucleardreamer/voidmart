@@ -1,3 +1,109 @@
 .detail {
-    background-color: blue;
+    background-color: #fff;
+    .footer {
+        position: absolute;
+        bottom: 0;
+    }
+    .header {
+        color: #000;
+        background-color: #C7C;
+        .logo {
+            filter: invert(1);
+        }
+        .back {
+            position: absolute;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            margin-left: 60px;
+            i {
+                font-size: 40px;
+                color: #000;
+            }
+        }
+    }
+    .body {
+        display: flex;
+        flex-direction: row;
+        margin-top: 180px;
+        .left,.right {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .left {
+            .img {
+                margin: 0px 60px 0px 20px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .right {
+            margin-right: 50px;
+            gap: 30px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.15em;
+        }
+        .desc {
+            font-size: 22px;
+            line-height: 1.25em;
+        }
+        .button {
+            width: 320px;
+            margin-top: 30px;
+        }
+    }
+    .advantage {
+        background-color: rgb(250, 238, 221);
+        color: rgb(0, 18, 51);
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        margin-top: 120px;
+        .headline {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 30px;
+            letter-spacing: 8px;
+        }
+        .points {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 100px;
+            margin-top: 40px;
+            text-align: center;
+            gap: 10px;
+            .point {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                .title {
+                    font-size: 25px;
+                    font-weight: 500;
+                    text-align: center;
+                }
+                .desc {
+                    
+                }
+                i {
+                    font-size: 100px;
+                }
+            }
+        }
+    }
+    .disclaimer {
+        margin: 50px 80px;
+        font-size: 12px;
+        text-align: center;
+        font-style: italic;
+    }
 }

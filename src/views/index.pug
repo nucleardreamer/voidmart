@@ -1,6 +1,11 @@
 html
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    link(rel='stylesheet', href='fontawesome/css/fontawesome.min.css')
+    link(rel='stylesheet', href='fontawesome/css/solid.min.css')
+    link(rel='stylesheet', href='fontawesome/css/regular.min.css')
+    link(rel='stylesheet', href='fontawesome/css/light.min.css')
+    link(rel='stylesheet', href='fontawesome/css/brands.min.css')
     link(rel='stylesheet', href='main.css')
     script.
         window.REFRESH_TIMER="#{REFRESH_TIMER}";
@@ -13,21 +18,18 @@ html
     script(src='js/html2canvas.js')
     script(src='js/glitch-lib.js')
     script(src='js/glitch-exec.js')
+    script(src='js/signature_pad.umd.min.js')
     script(src='js/main.js')
 
   body(class=DEV)
     .content
 
       //- landing
-      .page.landing.show(onclick="goto('.browse')")
+      .page.landing(onclick="goto('.browse')")
         .wrapper
           .logo
             img(src='images/logo.png')
           .title Tap to start shopping!
-          .footer
-            span &copy; 1983 Void Distribution Solutions, Inc.
-            span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            span &copy; 2024 Void Mart Holdings, Ltd.
         .bg
           .img
 
@@ -47,46 +49,111 @@ html
                 .items
                   each item in cat.items
                     .item(
-                        onclick="fillDetails(\""+item.name+"\", \""+item.desc+"\");goto('.detail')"
+                        onclick="fillDetails(\""+item.name+"\", \""+item.desc+"\", \""+item.url+"\");goto('.detail')"
                     )
                       .img
                         img(src=item.url)
                       .name= item.name
           .testimonial
+            .head Customers are saying
             .item 
-              .title "4/5 stars!!! I found $46.74 cents on the ground! But I can no longer hear music..."
+              .title "4/5 stars!!! I found $46.74 cents on the ground, but I can no longer hear music..."
               .sig - Max Hobbs
             .item 
-              .title "5 stars. Hey Bing, why won't my son call me back?"
-              .sig - google.com
+              .title "I feel like I've opened a door I can't close, and now I'm haunted by the fear of what I might have unleashed."
+              .sig - Diane Pace
             .item 
-              .title "I have fallen in love with this immersive experience."
+              .title "Hey Siri... hey Siri... Call grandma. Grandma. Call grandma."
               .sig - Andrew Nhem
-        .footer
-          button(onclick="goto('.landing')") BACK TO LANDING
+          .footer
+              span &copy; 1983 Void Distribution Solutions, Inc.
+              span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              span &copy; 2024 Void Mart Holdings, Ltd.
 
       //- detail
       .page.detail 
-        .back 
-          button(onclick="goto('.browse')") Back
-        .img
-        .title
-        .desc 
-        .reviewCount
-        .free-shipping 
-        .continue-to-checkout
+        .header(onclick="goto('.browse')")
+          .back
+            i.fa-light.fa-arrow-left(onclick="goto('.browse')")
+          img.logo(src='images/logo_small.png')
+        .body
+          .left
+            .img
+              img()
+          .right
+            .title
+            .reviewCount
+              i.fa-solid.fa-star
+              i.fa-solid.fa-star
+              i.fa-solid.fa-star
+              i.fa-solid.fa-star
+              i.fa-solid.fa-star-half-stroke
+              span=" " +Math.floor(Math.random() * 5000) + " Reviews"
+            .desc 
+            .price 
+              b Price:&nbsp;
+              span 1 Fraction of your Intangible Essence
+            .button(onclick="goto('.checkout')") Checkout now
+        .advantage 
+          .headline The void mart advantage 
+          .points 
+            .point 
+              .icon 
+                i.fa-light.fa-truck-fast
+              .title Free Shipping
+              .desc Purchased power delivered straight to your doorstep without any additional cost. No matter where you reside, our complimentary delivery service ensures that you can indulge in the benefits of your chosen ability without the hassle of hidden fees or long wait times.
+            .point 
+              .icon 
+                i.fa-light.fa-bolt
+              .title Instant activation
+              .desc With our instant activation feature, you can start exploring the thrilling possibilities of your chosen ability without any delay. No waiting, no complicated setup – just pure, unadulterated access to the extraordinary.
+            .point 
+              .icon 
+                i.fa-light.fa-location-check
+              .title Locally sourced
+              .desc Each power in our curated collection is carefully harvested from the very fabric of your local reality. We take pride in offering abilities that are sourced from the unique energies and influences that surround you, ensuring a deep, personal connection to the power you wield.
+        .disclaimer 
+          span * The powers and abilities offered within this digital bazaar are not for the faint of heart or the weak of spirit. By crossing the threshold and engaging with these arcane forces, you are entering into a covenant with the unknown, the uncharted, and the unimaginable. But fear not, for the consequences you face here are but shadows of the true price you may pay in the realm beyond the screen. The creators of this mystical marketplace cannot be held responsible for any metaphysical mishaps, existential epiphanies, or supernatural shenanigans that may befall you in the wake of your purchases. Remember, dear traveler, that in this realm, the only currency that matters is the currency of the soul, and the only true power lies in the depths of your own imagination. Tread carefully, choose wisely, and most importantly, enjoy the ride.
+        .footer
+          span &copy; 1983 Void Distribution Solutions, Inc.
+          span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          span &copy; 2024 Void Mart Holdings, Ltd.
 
+      //- checkout
+      .page.checkout.show
+        .header(onclick="goto('.browse')")
+          .back
+            i.fa-light.fa-arrow-left(onclick="goto('.browse')")
+          img.logo(src='images/logo_small.png')
+        .body
+          .tos
+            .title Terms and Conditions
+            ol 
+              li By completing this transaction, you acknowledge and accept that you are willingly exchanging an intangible part of yourself for the chosen power or ability. The exact nature and extent of this exchange may not be fully understood or disclosed.
+              li The use of your newly acquired power is solely at your own risk. We are not responsible for any unintended consequences, moral dilemmas, or existential crises that may arise from the exercise of your chosen ability.
+              li The duration and potency of your power may vary based on factors beyond our control, including but not limited to your own belief, the alignment of celestial bodies, and the whims of the universe itself.
+              li In the event that you experience any adverse effects, such as a loss of sense of self, a blurring of reality, or a gnawing feeling of emptiness, please consult with a metaphysical practitioner or a trusted spiritual guide. Our customer support team is not equipped to handle such inquiries.
+              li We reserve the right to revoke or modify your power at any time, should we deem it necessary for the greater good or the maintenance of the cosmic balance. In such cases, no refunds or exchanges will be offered.
+              li By agreeing to these terms and conditions, you waive any right to hold us liable for the consequences of your actions or the impact of your power on your life, relationships, or sense of reality.
+              li These terms and conditions are subject to change without notice, as the very nature of the powers we offer is fluid and ever-shifting. It is your responsibility to stay informed of any updates or modifications to this agreement.
+              li In the event of a dispute arising from the use or misuse of your power, the matter will be resolved through a binding metaphysical arbitration process, the details of which will be revealed only to those who partake in it.
+              li By proceeding with this transaction, you affirm that you are of sound mind and spirit, and that you are prepared to embrace the unknown and the unknowable. Should you have any doubts or reservations, we strongly advise you to reconsider your purchase.
+              li Lastly, we remind you that the true cost of power is often hidden in plain sight, and that the price you pay may extend far beyond the scope of this transaction. Proceed at your own peril, and may the consequences be ever in your favor.
+            .title Disclaimer
+            div The powers, abilities, and experiences offered through this platform are for entertainment and artistic purposes only. They are not intended to be taken as literal or factual representations of reality. The consequences and outcomes described are purely hypothetical and are meant to provoke thought, introspection, and discussion about the nature of desire, consumerism, and the human condition.
+            div By engaging with this art installation, you acknowledge that you are participating in a work of fiction and that any resemblance to actual events, powers, or consequences is purely coincidental. The creators of this experience are not responsible for any real-world actions, decisions, or beliefs that may be influenced by your participation. It is your responsibility to maintain a clear distinction between the fictional world of the installation and the realities of your own life. Should you find yourself struggling to separate the two, we strongly recommend seeking the guidance of a trusted friend, family member, or mental health professional. Remember, the true power lies within your own ability to think critically, question your assumptions, and make informed choices in the face of uncertainty and temptation.
+            div This disclaimer statement aims to clarify the fictional and artistic nature of the experience while also encouraging participants to approach the installation with a critical and reflective mindset. It emphasizes the importance of maintaining a clear boundary between the fictional world of the installation and the realities of one's own life.
+          .ack 
+            i.fa-light.fa-square-check 
+            span &nbsp;I Agree to Terms and Conditions
+          .sig
+            .title Sign below
+            canvas.pad(width="660", height="250")
+            .clear(onclick="signaturePad.clear()")
+              span CLEAR
+          .confirm 
+            .button Confirm
 
-
-
-
-      //- .page.checkout 
-      //-     .summary
-      //-     .delivery 
-      //-         .option Free Delivery 
-      //-         .option.disabled
-      //-     .tos-checkbox 
-      //-     .price
       //- .page.confirmation 
       //-     .disclaimer
       //-     .signature
