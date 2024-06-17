@@ -12,6 +12,15 @@ The printer code is specific to the [Epson TM-T88V-I (M265A)](https://epson.com/
 
 The printer often changes devices paths in `/dev` when the machine is unplugged (not shut down properly). I wrote UDEV rules that are hard coded to the productID and vendorID. If you brands of printers are switched, these rules need to be changed to match the new IDs in `src/49-printer-symlink.rules`.
 
+## Containers
+
+The `docker-compose.yml` is setup to be mostly specific to the balena platform, but should run on any machine without the `util` container.
+
+- `voidmart`: The main app, express server that serves the front end and talks to the printer
+- `browser`: Runs small chromium and hosts its own xserver
+- `wifi-connect`: Spins up an access point with configuration when it loses wifi (not needed totally, but handy)
+- `util`: Sets the machine hostname via balena supervisor API, and runs a nightly restart cron
+
 ## Environment variables
 
 - ENABLE_GPU: 1
@@ -29,3 +38,4 @@ The printer often changes devices paths in `/dev` when the machine is unplugged 
 - REFRESH_TIMER: 60000
 - ROTATE_DISPLAY: left
 - SHOW_CURSOR: 0
+- SET_HOSTNAME: voidmart
