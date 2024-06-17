@@ -1,6 +1,7 @@
 const { ThermalPrinter, PrinterTypes, CharacterSet, BreakLine } = require('node-thermal-printer')
 const path = require('path')
 
+// the dirty, nasty, hard coded print receipt.
 async function printit(itemText, fortuneText) {
     const p = new ThermalPrinter({
         type: PrinterTypes.EPSON,
@@ -16,7 +17,6 @@ async function printit(itemText, fortuneText) {
     })
 
     const isConnected = await p.isPrinterConnected()
-    console.log('Printer connected:', isConnected)
 
     p.setTypeFontA()
     p.alignCenter()
@@ -93,8 +93,6 @@ async function printit(itemText, fortuneText) {
     p.println(' '); p.newLine();
     p.println(' '); p.newLine();
     p.cut()
-
-    // console.log(p.getText())
 
     try {
         await p.execute()

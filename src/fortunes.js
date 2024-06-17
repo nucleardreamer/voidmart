@@ -4,9 +4,7 @@ const fortunes = [
     'The algorithm of fate has calculated your destiny. Brace for the unexpected.',
     'The ghosts of forgotten passwords linger in the depths of your being.',
     'The cursor of destiny hovers over your choices. Click wisely.',
-    'The fortune you seek is hidden in the source code of your dreams.',
     'As you scroll through the feed of life, the algorithm of chance is watching.',
-    'In the virtual reality of existence, your avatar is but a shadow of your true self.',
     'The firewall of the heart must be lowered to receive the update of enlightenment.',
     'As you trade pixels for promises, the void whispers your name.',
     // ominous and sinister

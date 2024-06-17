@@ -43,8 +43,7 @@ app.post('/printit', async (req, res) => {
 
 
 app.get('/fortune', async (req, res) => {
-    let fortune = fortunes()
-    res.send(fortune)
+    res.send(fortunes())
 })
 
 
