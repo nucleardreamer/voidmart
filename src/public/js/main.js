@@ -4,20 +4,6 @@ let details = {
     url: ''
 }
 
-async function initRefreshTimer()
-{
-    window.ref = setInterval(function() {
-        refreshIt()
-    }, window.REFRESH_TIMER)
-}
-
-async function refreshIt()
-{
-    location.reload()
-    clearInterval(window.ref)
-    initRefreshTimer()
-}
-
 function resetPage (delay) {
     setTimeout(() => {
         window.location.reload()
@@ -56,6 +42,28 @@ $(document).ready(() => {
         maxWidth: 6,
     })
 })
+
+function idleTimer() {
+    function reload() {
+        window.location.reload()
+    }
+    let t
+    function resetTimer() {
+        clearTimeout(t)
+        t = setTimeout(reload, window.REFRESH_TIMER || 60000)
+    } 
+
+    window.addEventListener('mousemove', resetTimer, true)
+    window.addEventListener('mousedown', resetTimer, true)
+    window.addEventListener('touchstart', resetTimer, true)
+    window.addEventListener('touchmove', resetTimer, true)
+    window.addEventListener('click', resetTimer, true)
+    window.addEventListener('keydown', resetTimer, true)
+    window.addEventListener('scroll', resetTimer, true)
+    window.addEventListener('wheel', resetTimer, true)
+}
+
+idleTimer()
 
 if (window.DEV !== "dev") {
 

@@ -23,6 +23,6 @@ The printer code is specific to the [Epson TM-T88V-I (M265A)](https://epson.com/
 - PERSISTENT: 0
 - PORT: 80
 - PRINTER_DEV_PATH: /dev/usb/lp3
-- REFRESH_TIMER: 120000
+- REFRESH_TIMER: 60000
 - ROTATE_DISPLAY: left
 - SHOW_CURSOR: 0
