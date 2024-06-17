@@ -178,6 +178,7 @@ body, html {
 }
 
 .header {
+  position: relative;
   width: 100%;
   background-color: rgb(250, 235, 222);
   color: #fff;
@@ -189,6 +190,19 @@ body, html {
 .header .logo {
   width: 150px;
   margin: 30px;
+}
+.header .back {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-left: 60px;
+}
+.header .back i {
+  font-size: 40px;
+  color: #000;
 }
 
 .page {
@@ -430,19 +444,6 @@ body, html {
 }
 .detail .header .logo {
   filter: invert(1);
-}
-.detail .header .back {
-  position: absolute;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  margin-left: 60px;
-}
-.detail .header .back i {
-  font-size: 40px;
-  color: #000;
 }
 .detail .body {
   display: flex;

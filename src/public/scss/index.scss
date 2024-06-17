@@ -34,6 +34,7 @@ body,html {
 }
 
 .header {
+    position: relative;
     width: 100%;
     background-color: rgb(250, 235, 222);
     color: #fff;
@@ -44,6 +45,19 @@ body,html {
     .logo {
         width: 150px;
         margin: 30px;
+    }
+    .back {
+        position: absolute;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        margin-left: 60px;
+        i {
+            font-size: 40px;
+            color: #000;
+        }
     }
 }
 

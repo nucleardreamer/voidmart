@@ -10,19 +10,6 @@
         .logo {
             filter: invert(1);
         }
-        .back {
-            position: absolute;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-            margin-left: 60px;
-            i {
-                font-size: 40px;
-                color: #000;
-            }
-        }
     }
     .body {
         display: flex;
