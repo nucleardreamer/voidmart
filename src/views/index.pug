@@ -25,7 +25,7 @@ html
     .content
 
       //- landing
-      .page.landing(onclick="goto('.browse')")
+      .page.landing.show(onclick="goto('.browse')")
         .wrapper
           .logo
             img(src='images/logo.png')
@@ -120,7 +120,7 @@ html
           span &copy; 2024 Void Mart Holdings, Ltd.
 
       //- checkout
-      .page.checkout.show
+      .page.checkout
         .header(onclick="goto('.browse')")
           .back
             i.fa-light.fa-arrow-left(onclick="goto('.browse')")
