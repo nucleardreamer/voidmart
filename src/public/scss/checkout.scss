@@ -17,6 +17,7 @@
         gap: 18px;
         height: 857px;
         overflow-y: scroll;
+        scroll-behavior: smooth;
         box-sizing: content-box; // dont remember if i need this with the webkit selector
         &::-webkit-scrollbar {
             display: none;

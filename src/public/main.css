@@ -359,6 +359,7 @@ body, html {
   overflow-y: scroll;
   flex-direction: column;
   box-sizing: content-box;
+  scroll-behavior: smooth;
 }
 .browse .scroller::-webkit-scrollbar {
   display: none;
@@ -574,6 +575,7 @@ body, html {
   gap: 18px;
   height: 857px;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   box-sizing: content-box;
 }
 .checkout .tos::-webkit-scrollbar {
