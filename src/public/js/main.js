@@ -18,6 +18,12 @@ async function refreshIt()
     initRefreshTimer()
 }
 
+function resetPage (delay) {
+    setTimeout(() => {
+        window.location.reload()
+    }, delay)
+}
+
 function goto(pageToShow) {
     console.log(pageToShow)
     $('.page').each((index, el) => {
@@ -37,10 +43,8 @@ function fillDetails(name, desc, url) {
     $('.detail .img img').attr('src', url)
 }
 
-function resetPage (delay) {
-    setTimeout(() => {
-        window.location.reload()
-    }, delay)
+function sendPrint() {
+    $.post('/printit', details)
 }
 
 let padCanvas, signaturePad;

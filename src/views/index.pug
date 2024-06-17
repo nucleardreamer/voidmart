@@ -153,7 +153,7 @@ html
             canvas.pad(width="660", height="250")
             .clear(onclick="signaturePad.clear()")
               span CLEAR
-          .confirm(onclick="goto('.thankyou');resetPage(12000)")
+          .confirm(onclick="goto('.thankyou');sendPrint();resetPage(12000)")
             .button Confirm
       .page.thankyou
         .body

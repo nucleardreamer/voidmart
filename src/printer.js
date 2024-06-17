@@ -20,7 +20,7 @@ async function printit(itemText, fortuneText) {
 
     p.setTypeFontA()
     p.alignCenter()
-    await p.printImage('./public/images/logo_small.png')
+    await p.printImage(path.join(__dirname, 'public', 'images', 'logo_small.png'))
 
     p.println(' '); p.newLine();
     p.println(' '); p.newLine();
@@ -68,7 +68,7 @@ async function printit(itemText, fortuneText) {
     p.alignCenter()
 
     // fortune
-    await p.printImage('./public/images/separator1.png')
+    await p.printImage(path.join(__dirname, 'public', 'images', 'separator1.png'))
     p.println('** You FREE fortune **')
     p.println(' '); p.newLine();
 
@@ -77,7 +77,7 @@ async function printit(itemText, fortuneText) {
     p.println(`"${fortuneText}"`)
     p.bold(false)
     p.setTextSize(0,0)
-    await p.printImage('./public/images/separator1.png')
+    await p.printImage(path.join(__dirname, 'public', 'images', 'separator1.png'))
 
     p.println(' '); p.newLine();
     p.println(' '); p.newLine();
@@ -90,13 +90,15 @@ async function printit(itemText, fortuneText) {
     p.alignLeft()
     p.println('Please note that all transactions are final. Due to the unique nature of our products and services, refunds, returns, or exchanges cannot be accommodated. We appreciate your understanding and are confident you will enjoy your purchase. Should you have any questions or concerns, our customer support team will not be available to assist you.')
     p.println(' '); p.newLine();
+    p.println(' '); p.newLine();
+    p.println(' '); p.newLine();
     p.cut()
 
-    console.log(p.getText())
+    // console.log(p.getText())
 
     try {
         await p.execute()
-        console.log('Print success.')
+        console.log('Print success.', itemText, fortuneText)
     } catch (error) {
         console.error('Print error:', error)
     }

@@ -31,12 +31,13 @@ app.get('/', async (req, res) => {
     })
 })
 
-app.get('/printtest', async (req, res) => {
-    let itemText = 'A 3% Increase in the Likelihood of Finding Money on the Street'
-    let fortuneText = 'The shadows of your digital footprint will echo in the halls of eternity.'
-    printit(itemText, fortuneText)
+app.post('/printit', async (req, res) => {
+    let name = req.body.name
+    let fortune = fortunes()
+    printit(name, fortune)
+    console.log('Printing', name, fortune)
     res.json({
-        itemText, fortuneText
+        name, fortune
     })
 })
 
