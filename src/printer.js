@@ -4,7 +4,7 @@ const path = require('path')
 async function printit(itemText, fortuneText) {
     const p = new ThermalPrinter({
         type: PrinterTypes.EPSON,
-        interface: process.env.PRINTER_DEV_PATH || '/dev/usb/lp3',
+        interface: process.env.PRINTER_DEV_PATH || '/dev/epson',
         options: {
             timeout: 1000,
         },

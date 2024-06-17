@@ -1,0 +1,1 @@
+ATTRS{idVendor}=="04b8", ATTRS{idProduct}=="0202" SYMLINK="epson", MODE:="0666"

@@ -12,4 +12,6 @@ RUN JOBS=MAX npm install --production --unsafe-perm && npm cache verify && rm -r
 
 COPY src /src
 
+COPY src/49-printer-symlink.rules /etc/udev/rules.d/49-printer-symlink.rules
+
 CMD ["npm", "start"]
