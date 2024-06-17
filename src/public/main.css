@@ -180,7 +180,7 @@ body, html {
   left: 0;
   opacity: 1;
   background-color: #000;
-  animation: fadeOut 2s ease 1s;
+  animation: fadeOut 2s ease 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   z-index: 100;
@@ -425,6 +425,7 @@ body, html {
   margin-top: 20px;
   font-weight: 500;
   padding: 0px 40px;
+  text-wrap: balance;
 }
 .browse .scroller .testimonial {
   display: flex;
@@ -447,6 +448,7 @@ body, html {
 .browse .scroller .testimonial .item .title {
   font-size: 30px;
   font-style: italic;
+  text-wrap: balance;
 }
 .browse .scroller .testimonial .sig {
   font-size: 24px;
@@ -492,10 +494,12 @@ body, html {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.15em;
+  text-wrap: balance;
 }
 .detail .body .desc {
   font-size: 22px;
   line-height: 1.25em;
+  text-wrap: balance;
 }
 .detail .body .button {
   width: 320px;
@@ -536,6 +540,9 @@ body, html {
   font-weight: 500;
   text-align: center;
 }
+.detail .advantage .points .point .desc {
+  text-wrap: balance;
+}
 .detail .advantage .points .point i {
   font-size: 100px;
 }
@@ -544,6 +551,7 @@ body, html {
   font-size: 12px;
   text-align: center;
   font-style: italic;
+  text-wrap: balance;
 }
 
 .checkout {

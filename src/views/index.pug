@@ -29,7 +29,7 @@ html
       .page.landing.show(onclick="goto('.browse')")
         .wrapper
           .logo
-            img(src='images/logo.png')
+            img(src='images/logo.png', draggable='false')
           .title Tap to start shopping!
         .bg
           .img
@@ -53,7 +53,7 @@ html
                         onclick="fillDetails(\""+item.name+"\", \""+item.desc+"\", \""+item.url+"\");goto('.detail')"
                     )
                       .img
-                        img(src=item.url)
+                        img(src=item.url, draggable='false')
                       .name= item.name
           .testimonial
             .head Customers are saying
@@ -80,7 +80,7 @@ html
         .body
           .left
             .img
-              img()
+              img(draggable='false')
           .right
             .title
             .reviewCount
@@ -102,7 +102,7 @@ html
               .icon 
                 i.fa-light.fa-truck-fast
               .title Free Shipping
-              .desc Purchased power delivered straight to your doorstep without any additional cost. No matter where you reside, our complimentary delivery service ensures that you can indulge in the benefits of your chosen ability without the hassle of hidden fees or long wait times.
+              .desc Purchased power delivered straight to YOU without any additional cost. No matter where you are, our complimentary delivery service ensures they can find you, and you can indulge in the benefits of your chosen ability without the hassle of hidden fees or long wait times.
             .point 
               .icon 
                 i.fa-light.fa-bolt
@@ -112,9 +112,9 @@ html
               .icon 
                 i.fa-light.fa-location-check
               .title Locally sourced
-              .desc Each power in our curated collection is carefully harvested from the very fabric of your local reality. We take pride in offering abilities that are sourced from the unique energies and influences that surround you, ensuring a deep, personal connection to the power you wield.
+              .desc Each power in our curated collection is carefully harvested from the very fabric of your physical and mental reality. We take pride in offering abilities that are sourced from the unique energies and influences that surround you, ensuring a deep, personal connection to the power you wield.
         .disclaimer 
-          span * The powers and abilities offered within this digital bazaar are not for the faint of heart or the weak of spirit. By crossing the threshold and engaging with these arcane forces, you are entering into a covenant with the unknown, the uncharted, and the unimaginable. But fear not, for the consequences you face here are but shadows of the true price you may pay in the realm beyond the screen. The creators of this mystical marketplace cannot be held responsible for any metaphysical mishaps, existential epiphanies, or supernatural shenanigans that may befall you in the wake of your purchases. Remember, dear traveler, that in this realm, the only currency that matters is the currency of the soul, and the only true power lies in the depths of your own imagination. Tread carefully, choose wisely, and most importantly, enjoy the ride.
+          span * The powers and abilities offered within this digital bazaar are not for the faint of heart or the weak of spirit. By crossing the threshold and engaging with these arcane forces, you are entering into a covenant with the unknown, the uncharted, and the unimaginable. But fear not, for the consequences you face here are but shadows of the true price you may pay in the realm beyond the screen. Remember, dear traveler, that in this realm, the only currency that matters is the currency of the soul, and the only true power lies in the depths of your own imagination. Tread carefully, choose wisely, and most importantly, enjoy the ride.
         .footer
           span &copy; 1983 Void Distribution Solutions, Inc.
           span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -141,9 +141,10 @@ html
               li By proceeding with this transaction, you affirm that you are of sound mind and spirit, and that you are prepared to embrace the unknown and the unknowable. Should you have any doubts or reservations, we strongly advise you to reconsider your purchase.
               li Lastly, we remind you that the true cost of power is often hidden in plain sight, and that the price you pay may extend far beyond the scope of this transaction. Proceed at your own peril, and may the consequences be ever in your favor.
             .title Disclaimer
-            div The powers, abilities, and experiences offered through this platform are for entertainment and artistic purposes only. They are not intended to be taken as literal or factual representations of reality. The consequences and outcomes described are purely hypothetical and are meant to provoke thought, introspection, and discussion about the nature of desire, consumerism, and the human condition.
-            div By engaging with this art installation, you acknowledge that you are participating in a work of fiction and that any resemblance to actual events, powers, or consequences is purely coincidental. The creators of this experience are not responsible for any real-world actions, decisions, or beliefs that may be influenced by your participation. It is your responsibility to maintain a clear distinction between the fictional world of the installation and the realities of your own life. Should you find yourself struggling to separate the two, we strongly recommend seeking the guidance of a trusted friend, family member, or mental health professional. Remember, the true power lies within your own ability to think critically, question your assumptions, and make informed choices in the face of uncertainty and temptation.
-            div This disclaimer statement aims to clarify the fictional and artistic nature of the experience while also encouraging participants to approach the installation with a critical and reflective mindset. It emphasizes the importance of maintaining a clear boundary between the fictional world of the installation and the realities of one's own life.
+            div The powers, abilities, and experiences offered through this platform are for entertainment and artistic purposes only. They are not intended to be taken as literal or factual representations of reality. The consequences and outcomes described are purely hypothetical and are meant to provoke thought, introspection, and discussion about the nature of desire and consumerism.
+            div By engaging with this art installation, you acknowledge that you are participating in a work of fiction and that any resemblance to actual events, powers, or consequences is purely coincidental. The creator of this experience are not responsible for any real-world actions, decisions, or beliefs that may be influenced by your participation.
+            div It is your responsibility to maintain a clear distinction between the fictional world of the installation and the realities of your own life. Should you find yourself struggling to separate the two, we strongly recommend seeking the guidance of a trusted friend, family member, but probably a mental health professional. Remember, the true power lies within your own ability to think critically, question your assumptions, and make informed choices in the face of uncertainty and temptation.
+            div &copy;2024 Made by Flynn Joffray&#8482;
           .ack 
             i.fa-light.fa-square-check 
             span &nbsp;I Agree to Terms and Conditions
