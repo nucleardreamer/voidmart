@@ -37,6 +37,26 @@ function resetPage (delay) {
     }, delay)
 }
 
+// reset the page if no interactions happen
+function idleTimer() {
+    function reload() {
+        window.location.reload()
+    }
+    let t
+    function resetTimer() {
+        clearTimeout(t)
+        t = setTimeout(reload, window.REFRESH_TIMER || 60000)
+    } 
+
+    window.addEventListener('mousemove', resetTimer, true)
+    window.addEventListener('mousedown', resetTimer, true)
+    window.addEventListener('touchstart', resetTimer, true)
+    window.addEventListener('touchmove', resetTimer, true)
+    window.addEventListener('click', resetTimer, true)
+    window.addEventListener('scroll', resetTimer, true)
+    window.addEventListener('wheel', resetTimer, true)
+}
+
 // setup the sig pad on the checkout screen
 let padCanvas, signaturePad;
 
@@ -48,38 +68,19 @@ $(document).ready(() => {
     })
 })
 
+
+idleTimer()
+
 // turn off annoying stuff when you are in dev mode
 if (window.DEV !== "dev") {
-
-    // reset the page if no interactions happen
-    function idleTimer() {
-
-        function reload() {
-            window.location.reload()
-        }
-        let t
-
-        function resetTimer() {
-            clearTimeout(t)
-            t = setTimeout(reload, window.REFRESH_TIMER || 60000)
-        } 
-
-        window.addEventListener('mousemove', resetTimer, true)
-        window.addEventListener('mousedown', resetTimer, true)
-        window.addEventListener('touchstart', resetTimer, true)
-        window.addEventListener('touchmove', resetTimer, true)
-        window.addEventListener('click', resetTimer, true)
-        window.addEventListener('scroll', resetTimer, true)
-        window.addEventListener('wheel', resetTimer, true)
-    }
-
-    idleTimer()
 
     // kill right click
     document.addEventListener('contextmenu', ev => ev.preventDefault())
     
     window.onload = function() {
-        var gl = Object.create(glitch_exec)
-        gl.start(document.body)
+        if (window.ENABLE_GLITCH === 'true') {
+            var gl = Object.create(glitch_exec)
+            gl.start(document.body)
+        }
     }
 }

@@ -26,6 +26,7 @@ app.get('/', async (req, res) => {
         GLITCH_DELAY: process.env.GLITCH_DELAY || 60,
         GLITCH_COUNT: process.env.GLITCH_COUNT || 7,
         REFRESH_TIMER: process.env.REFRESH_TIMER || 60000,
+        ENABLE_GLITCH: process.env.ENABLE_GLITCH || 'false',
         BOONS: boons,
         DEV: process.env.NODE_ENV === 'production' ? '' : 'dev'
     })

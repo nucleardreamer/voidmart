@@ -21,6 +21,7 @@ The printer often changes devices paths in `/dev` when the machine is unplugged 
 - GLITCH_DELAY: 50
 - GLITCH_MAX: 60000
 - GLITCH_MIN: 500
+- ENABLE_GLITCH: false
 - KIOSK: 1
 - LAUNCH_URL: http://localhost/
 - NODE_ENV: production
