@@ -1,0 +1,32 @@
+.thankyou {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d2f8d;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 12s ease-in;
+    &.show {
+        opacity: 0;
+    }
+    .body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        margin: 150px;
+        text-align: center;
+    }
+    .title {
+        font-size: 50px;
+        font-weight: 300;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+    .desc {
+        font-size: 30px;
+        font-style: italic;
+    }
+}

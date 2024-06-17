@@ -37,6 +37,12 @@ function fillDetails(name, desc, url) {
     $('.detail .img img').attr('src', url)
 }
 
+function resetPage (delay) {
+    setTimeout(() => {
+        window.location.reload()
+    }, delay)
+}
+
 let padCanvas, signaturePad;
 
 $(document).ready(() => {

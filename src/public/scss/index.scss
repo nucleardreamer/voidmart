@@ -22,9 +22,24 @@ body,html {
     top: 0;
     left: 0;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: #222;
+    background-color: #000;
     width: 1080px;
     height: 1920px;
+}
+
+.fadeIn {
+    position: fixed;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #000;
+    animation: fadeOut 2s ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 100;
 }
 
 .content {
@@ -121,5 +136,14 @@ body,html {
     }
     100% {
         top: 0px;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

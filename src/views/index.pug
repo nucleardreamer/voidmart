@@ -22,6 +22,7 @@ html
     script(src='js/main.js')
 
   body(class=DEV)
+    .fadeIn
     .content
 
       //- landing
@@ -151,17 +152,9 @@ html
             canvas.pad(width="660", height="250")
             .clear(onclick="signaturePad.clear()")
               span CLEAR
-          .confirm 
+          .confirm(onclick="goto('.thankyou');resetPage(12000)")
             .button Confirm
-
-      //- .page.confirmation 
-      //-     .disclaimer
-      //-     .signature
-      //-         .clear 
-      //-     .submit
-      //- .page.finished 
-      //-     .startover            
-
-      //- .overlay.tos 
-      //-     .text 
-      //-     .accept 
+      .page.thankyou
+        .body
+          .title Purchase Complete 
+          .desc Thank you for indulging in this journey through this immersive shopping experience. May the consequences be ever in your favor!
