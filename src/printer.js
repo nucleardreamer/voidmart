@@ -69,7 +69,7 @@ async function printit(itemText, fortuneText) {
 
     // fortune
     await p.printImage(path.join(__dirname, 'public', 'images', 'separator1.png'))
-    p.println('** You FREE fortune **')
+    p.println('** Your FREE fortune **')
     p.println(' '); p.newLine();
 
     // fortune text
