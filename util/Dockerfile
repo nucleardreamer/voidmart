@@ -2,10 +2,8 @@ FROM balenalib/amd64-debian:run
 
 RUN install_packages dbus curl cron jq
 
-COPY start.sh reboot.sh hostname.sh /
+COPY scripts/ /scripts/
 
-RUN chmod +x start.sh && \
-    chmod +x reboot.sh && \
-    chmod +x hostname.sh
+RUN chmod 0744 /scripts/*.sh
 
-CMD ["sh", "start.sh"]
+CMD ["sh", "/scripts/start.sh"]
