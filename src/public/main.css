@@ -644,5 +644,21 @@ body, html {
   font-size: 30px;
   font-style: italic;
 }
+.thankyou .pointer {
+  position: absolute;
+  bottom: 0;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.thankyou .pointer i {
+  font-size: 130px;
+}
 
 /*# sourceMappingURL=main.css.map */

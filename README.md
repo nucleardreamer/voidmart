@@ -30,12 +30,13 @@ The `docker-compose.yml` is setup to be mostly specific to the balena platform, 
 - GLITCH_MIN: 500
 - ENABLE_GLITCH: false
 - KIOSK: 1
-- LAUNCH_URL: http://localhost/
+- LAUNCH_URL: http://127.0.0.1:8080/
+- PORT: 8080
 - NODE_ENV: production
 - PERSISTENT: 0
-- PORT: 80
 - PRINTER_DEV_PATH: /dev/usb/lp3
 - REFRESH_TIMER: 60000
 - ROTATE_DISPLAY: left
 - SHOW_CURSOR: 0
 - SET_HOSTNAME: voidmart
+- PORTAL_SSID: voidmart
