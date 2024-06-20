@@ -40,3 +40,5 @@ The `docker-compose.yml` is setup to be mostly specific to the balena platform, 
 - SHOW_CURSOR: 0
 - SET_HOSTNAME: voidmart
 - PORTAL_SSID: voidmart
+- REDIS_PASS: ***
+- REDIS_CONNECT_RETRY: 20
