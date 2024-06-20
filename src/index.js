@@ -16,6 +16,7 @@ try {
             lazyConnect: true,
             connectTimeout: 5000,
             maxRetriesPerRequest: 3,
+            enableOfflineQueue: true,
             retryStrategy(times) {
                 const delay = Math.min(times * 50, 10000)
                 return (times >= process.env.REDIS_CONNECT_RETRY || 20) ? false : delay
