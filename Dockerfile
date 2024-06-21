@@ -4,7 +4,7 @@ ENV UDEV=on
 
 RUN apt-get update && \
     apt-get install \
-    build-essential
+    build-essential xxd bc
 
 COPY package*.json ./
 
