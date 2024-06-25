@@ -1,6 +1,10 @@
 # voidmart
 
-What is it? A kiosk. What does it do? You will have to find out. Where am I going with this? Wherever the wind blows.
+This project is called "Void Mart". It lives inside an industrial self-serve shopping kiosk. The experience is my take on Faust and Mephistopheles (the classic "make a deal/pact with the devil" trope), but a crappy automated chuck-e-cheese prize counter version...
+
+There are 15 different "items" to choose from, powers/abilities ranging from "Always Find a Parking Spot" to "Avoid Small Talk at a Party". One item per customer, for the low low price of `One Fraction of Your Intangible Essence". The terms and conditions are explicit, and you get a printed receipt of your transaction when you are finished.
+
+<img src="https://raw.githubusercontent.com/nucleardreamer/voidmart/main/voidmart.jpg" width="200">
 
 ## Installing
 
