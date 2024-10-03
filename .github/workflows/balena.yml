@@ -8,8 +8,8 @@ on:
       branches:
         - main
         - master
-  
-  jobs:
+
+jobs:
     balena_cloud_build:
       runs-on: ubuntu-latest
       steps:
