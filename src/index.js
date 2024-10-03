@@ -11,7 +11,8 @@ const boons = require(path.join(__dirname, 'boons'))
 var redis
 try {
     redis = new Redis(
-        `rediss://default:${process.env.REDIS_PASS}@included-marmot-36127.upstash.io:6379`,
+        // `rediss://default:${process.env.REDIS_URI}@included-marmot-36127.upstash.io:6379`,
+        process.env.REDIS_URI,
         {
             lazyConnect: true,
             connectTimeout: 5000,
